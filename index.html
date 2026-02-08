@@ -2,58 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>FF Esports Arena</title>
+  <title>FF Esports | Official Arena</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <link rel="stylesheet" href="style.css">
 
-  <!-- Firebase -->
+  <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>🔥 FF ESPORTS ARENA</h1>
-    <p>Daily CS & BR Tournaments</p>
-  </header>
+  <!-- BACKGROUND EFFECT -->
+  <div class="bg"></div>
 
-  <!-- AUTH SECTION -->
-  <section class="card">
-    <h2>Login</h2>
-    <input id="logEmail" type="email" placeholder="Email">
-    <input id="logPass" type="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-  </section>
+  <!-- MAIN CARD -->
+  <div class="main-card">
 
-  <section class="card">
-    <h2>Register</h2>
-    <input id="regEmail" type="email" placeholder="Email">
-    <input id="regPass" type="password" placeholder="Password">
-    <button onclick="register()">Create Account</button>
-  </section>
+    <div class="logo">
+      <h1>🔥 FF ESPORTS</h1>
+      <p>Daily CS & BR Tournaments</p>
+    </div>
 
-  <!-- MATCHES -->
-  <section class="card glow">
-    <h2>🎮 Battle Royale</h2>
-    <p>Solo / Duo • 48 Players</p>
-    <p class="fee">Entry Fee: 5 BDT</p>
-    <button onclick="joinBR()">Join BR Match</button>
-  </section>
+    <!-- LOGIN -->
+    <div class="box">
+      <h2>Login</h2>
+      <input id="logEmail" type="email" placeholder="Email">
+      <input id="logPass" type="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+    </div>
 
-  <section class="card glow">
-    <h2>⚔️ Clash Squad</h2>
-    <p>2 VS 2 • Hourly Match</p>
-    <p class="fee">Entry Fee: 20 BDT</p>
-    <button onclick="joinCS()">Join CS Match</button>
-  </section>
+    <!-- REGISTER -->
+    <div class="box">
+      <h2>Create Account</h2>
+      <input id="regEmail" type="email" placeholder="Email">
+      <input id="regPass" type="password" placeholder="Password">
+      <button onclick="register()">Create Account</button>
+    </div>
 
-  <p id="msg"></p>
+    <!-- MATCHES -->
+    <div class="match br">
+      <h3>🎮 Battle Royale</h3>
+      <p>48 Players • Solo / Duo</p>
+      <span>Entry: 5 BDT</span>
+      <button onclick="joinBR()">Join BR</button>
+    </div>
 
-  <!-- SCRIPT -->
+    <div class="match cs">
+      <h3>⚔️ Clash Squad</h3>
+      <p>2 VS 2 • Hourly</p>
+      <span>Entry: 20 BDT</span>
+      <button onclick="joinCS()">Join CS</button>
+    </div>
+
+    <p id="msg" class="msg"></p>
+
+  </div>
+
   <script src="script.js"></script>
-
 </body>
 </html>
