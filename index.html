@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>FF Esports Arena</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-</head>
+  <meta charset="UTF-8">
+  <title>FF Esports Arena</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="style.css">
 
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+</head>
 <body>
 
-<div class="app">
+  <!-- HEADER -->
+  <header>
+    <h1>🔥 FF ESPORTS ARENA</h1>
+    <p>Daily CS & BR Tournaments</p>
+  </header>
 
-<h1>🔥 FF ESPORTS ARENA 🔥</h1>
+  <!-- AUTH SECTION -->
+  <section class="card">
+    <h2>Login</h2>
+    <input id="logEmail" type="email" placeholder="Email">
+    <input id="logPass" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </section>
 
-<div class="card">
-<h2>Create Account</h2>
-<input id="su-email" placeholder="Email">
-<input id="su-pass" type="password" placeholder="Password">
-<button onclick="signup()">Sign Up</button>
-</div>
+  <section class="card">
+    <h2>Register</h2>
+    <input id="regEmail" type="email" placeholder="Email">
+    <input id="regPass" type="password" placeholder="Password">
+    <button onclick="register()">Create Account</button>
+  </section>
 
-<div class="card">
-<h2>Login</h2>
-<input id="li-email" placeholder="Email">
-<input id="li-pass" type="password" placeholder="Password">
-<button onclick="login()">Login</button>
-</div>
+  <!-- MATCHES -->
+  <section class="card glow">
+    <h2>🎮 Battle Royale</h2>
+    <p>Solo / Duo • 48 Players</p>
+    <p class="fee">Entry Fee: 5 BDT</p>
+    <button onclick="joinBR()">Join BR Match</button>
+  </section>
 
-<div class="card">
-<h2>Daily Matches</h2>
-<p>BR Solo/Duo – 5 Coins</p>
-<button onclick="joinMatch(5)">Join BR</button>
+  <section class="card glow">
+    <h2>⚔️ Clash Squad</h2>
+    <p>2 VS 2 • Hourly Match</p>
+    <p class="fee">Entry Fee: 20 BDT</p>
+    <button onclick="joinCS()">Join CS Match</button>
+  </section>
 
-<p>CS 2v2 – 20 Coins</p>
-<button onclick="joinMatch(20)">Join CS</button>
-</div>
+  <p id="msg"></p>
 
-<div class="card">
-<h2>Wallet</h2>
-<p id="wallet">Login to see balance</p>
-</div>
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
 
-</div>
-
-<script type="module" src="script.js"></script>
 </body>
 </html>
