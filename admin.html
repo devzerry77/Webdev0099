@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FF Esports Admin Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>🛡️ Admin Login</h2>
+  <input id="adminEmail" placeholder="Admin Email">
+  <input id="adminPass" type="password" placeholder="Password">
+  <button onclick="adminLogin()">Login</button>
+  <p id="adminMsg"></p>
+</div>
+
+<div class="dashboard hidden" id="adminPanel">
+
+  <h1>🔥 ADMIN CONTROL PANEL</h1>
+
+  <div class="match">
+    <h3>➕ Add Money</h3>
+    <input id="uidMoney" placeholder="User UID">
+    <input id="amount" type="number" placeholder="Amount">
+    <button onclick="addMoney()">Add Money</button>
+  </div>
+
+  <div class="match">
+    <h3>🚫 Ban / Unban User</h3>
+    <input id="uidBan" placeholder="User UID">
+    <button onclick="banUser()">Ban</button>
+    <button onclick="unbanUser()">Unban</button>
+  </div>
+
+  <div class="match">
+    <h3>👤 Create Account</h3>
+    <input id="newEmail" placeholder="User Email">
+    <input id="newPass" placeholder="Password">
+    <button onclick="createUser()">Create</button>
+  </div>
+
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
