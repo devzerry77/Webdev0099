@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>FF Esports | Official Arena</title>
+  <title>FF Esports Tournament</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="style.css">
 
   <!-- Firebase SDK -->
@@ -14,52 +13,64 @@
 </head>
 <body>
 
-  <!-- BACKGROUND EFFECT -->
-  <div class="bg"></div>
+<!-- LIVE NEWS BAR -->
+<div class="news-bar">
+  <marquee behavior="scroll" direction="left">
+    🔥 Today BR Match 8:00 PM | CS Match Every Hour | Entry Fee BR 5৳ | CS 20৳ | Prize Pool Updated Daily 🔥
+  </marquee>
+</div>
 
-  <!-- MAIN CARD -->
-  <div class="main-card">
+<!-- LOGIN PAGE -->
+<div class="card" id="loginBox">
+  <h2>🔐 Login</h2>
+  <input id="logEmail" type="email" placeholder="Email">
+  <input id="logPass" type="password" placeholder="Password">
+  <button onclick="login()">Login</button>
 
-    <div class="logo">
-      <h1>🔥 FF ESPORTS</h1>
-      <p>Daily CS & BR Tournaments</p>
+  <h3>Create Account</h3>
+  <input id="regEmail" type="email" placeholder="Email">
+  <input id="regPass" type="password" placeholder="Password">
+  <button onclick="register()">Register</button>
+
+  <p id="msg"></p>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard hidden" id="dashboard">
+
+  <h1>🔥 FF ESPORTS DASHBOARD</h1>
+
+  <div class="stats">
+    <div class="stat-box">
+      <span>Wallet</span>
+      <h2 id="wallet">৳0</h2>
     </div>
 
-    <!-- LOGIN -->
-    <div class="box">
-      <h2>Login</h2>
-      <input id="logEmail" type="email" placeholder="Email">
-      <input id="logPass" type="password" placeholder="Password">
-      <button onclick="login()">Login</button>
+    <div class="stat-box">
+      <span>BR Players</span>
+      <h2 id="brCount">0</h2>
     </div>
 
-    <!-- REGISTER -->
-    <div class="box">
-      <h2>Create Account</h2>
-      <input id="regEmail" type="email" placeholder="Email">
-      <input id="regPass" type="password" placeholder="Password">
-      <button onclick="register()">Create Account</button>
+    <div class="stat-box">
+      <span>CS Players</span>
+      <h2 id="csCount">0</h2>
     </div>
-
-    <!-- MATCHES -->
-    <div class="match br">
-      <h3>🎮 Battle Royale</h3>
-      <p>48 Players • Solo / Duo</p>
-      <span>Entry: 5 BDT</span>
-      <button onclick="joinBR()">Join BR</button>
-    </div>
-
-    <div class="match cs">
-      <h3>⚔️ Clash Squad</h3>
-      <p>2 VS 2 • Hourly</p>
-      <span>Entry: 20 BDT</span>
-      <button onclick="joinCS()">Join CS</button>
-    </div>
-
-    <p id="msg" class="msg"></p>
-
   </div>
 
-  <script src="script.js"></script>
+  <div class="match br">
+    <h3>🎮 Battle Royale</h3>
+    <p>48 Players • Entry 5৳</p>
+    <button onclick="joinBR()">Join BR</button>
+  </div>
+
+  <div class="match cs">
+    <h3>⚔️ Clash Squad</h3>
+    <p>2v2 • Entry 20৳</p>
+    <button onclick="joinCS()">Join CS</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
